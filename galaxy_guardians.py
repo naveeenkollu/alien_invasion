@@ -12,7 +12,7 @@ from bullet import Bullet
 from alien import Alien
 from button import Button
 
-class AlienInvasion:
+class GalaxyGuardians:
     """class to manage game assets and behavior."""
 
     def __init__(self):
@@ -23,7 +23,7 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.settings.screen_width = self.screen.get_rect().width
         self.settings.screen_height = self.screen.get_rect().height
-        pygame.display.set_caption("Alien Invasion")
+        pygame.display.set_caption("Galaxy Guardians")
 
         # Create an instance to store game statistics.
         self.stats = GameStats(self)
@@ -205,9 +205,9 @@ class AlienInvasion:
         number_aliens_x = available_space_x // (2 * alien_width)
 
         # Determines the number of rows of aliens that fit on the screen.
-        ship_height = self.ship.rect.height
+        ship_height = self.ship.rect.height - 50
         available_space_y = (self.settings.screen_height - (3 * alien_height) - ship_height)
-        number_rows = available_space_y // (2 * alien_height)
+        number_rows = available_space_y // (3 * alien_height)
 
         # Creates the full fleet of aliens.
         for row_number in range(number_rows):
@@ -258,5 +258,5 @@ class AlienInvasion:
 
 if __name__ == "__main__":
     # Makes a game instance and runs the game.
-    ai = AlienInvasion()
+    ai = GalaxyGuardians()
     ai.run_game()

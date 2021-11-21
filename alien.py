@@ -13,8 +13,8 @@ class Alien(Sprite):
         self.image = pygame.image.load('alien_invasion\images\enemy-ship.png')
         self.rect = self.image.get_rect()
 
-        self.rect.x = self.rect.width
-        self.rect.y = self.rect.height
+        self.rect.x = self.rect.width + 50
+        self.rect.y = self.rect.height + 50
 
         # Stores the alien's exact horizontal position
         self.x = float(self.rect.x)
